@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const Crypto = require('./models/Crypto');
-
+const data = require('./home.js')
 // Allow cross origin  
 const cors = require('cors');
 const options = { 
@@ -22,7 +22,7 @@ app.listen(PORT, ()=>{
 })
 
 app.get('/', (req, res) => {
-    return res.send("hello world!")
+    return res.send(data);
 })
 
 const fetchDetail = async(crypto) => {
@@ -55,7 +55,7 @@ const fetchCryptoDetails = async() => {
     }
 }
 
-setInterval(fetchCryptoDetails, 60*1000)
+//setInterval(fetchCryptoDetails, 60*1000)
 
 app.get("/stats", async (req, res) =>{
     try {
@@ -68,7 +68,7 @@ app.get("/stats", async (req, res) =>{
             })
 
         const details = await Crypto.find({name_id:coin}).sort({timeStamp:-1}).limit(1);
-        console.log(details)
+        //console.log(details)
         return res.status(200).json({
             price: details[0].current_price,
             marketCap: details[0].market_cap,
