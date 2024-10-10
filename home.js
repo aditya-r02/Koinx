@@ -9,7 +9,7 @@ const data = `
     <p>
         Created by Aditya Rana <br/>
         <a href="https://www.linkedin.com/in/adityarana2003/">LinkedIn</a> <br/>
-        Mail: ranaaditya0204@gmail.com
+        Mail: ranaaditya01@outlook.com
     </p>
 </div>
 `;

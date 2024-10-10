@@ -55,7 +55,7 @@ const fetchCryptoDetails = async() => {
     }
 }
 
-//setInterval(fetchCryptoDetails, 60*1000)
+setInterval(fetchCryptoDetails, 2*60*60*1000)
 
 app.get("/stats", async (req, res) =>{
     try {
